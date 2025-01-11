@@ -1,0 +1,150 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-xl);
+  min-height: 100vh;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.top-section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.logo-container {
+  display: block;
+}
+
+.company-logo {
+  height: auto;
+  object-fit: contain;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: var(--spacing-xl) 0;
+  text-align: center;
+}
+
+.welcome-text {
+  font-size: 1.5rem;
+  color: var(--secondary);
+  margin-bottom: var(--spacing-lg);
+}
+
+.edit-text {
+  font-size: 1rem;
+  padding: var(--spacing-sm) var(--spacing-md);
+  background: rgba(var(--foreground-rgb), 0.05);
+  border-radius: var(--border-radius);
+  display: inline-block;
+}
+
+.code {
+  font-weight: 600;
+  font-family: monospace;
+  color: var(--primary);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-lg);
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.card {
+  position: relative;
+  padding: var(--spacing-lg);
+  border-radius: 8px;
+  background: rgba(var(--foreground-rgb), 0.03);
+  border: 1px solid rgba(var(--foreground-rgb), 0.1);
+  transition: all 0.3s ease;
+  text-decoration: none;
+  color: inherit;
+  overflow: hidden;
+}
+
+.card-content {
+  position: relative;
+  z-index: 1;
+}
+
+.card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(var(--foreground-rgb), 0.05);
+  transform: scale(0);
+  transition: transform 0.3s ease;
+  border-radius: var(--border-radius);
+}
+
+.card:active::after {
+  transform: scale(1);
+}
+
+.card h2 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: var(--spacing-md);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.arrow {
+  font-size: 1.2rem;
+  transition: transform 0.2s ease;
+}
+
+.card p {
+  color: var(--secondary);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+@media (hover: hover) {
+  .card:hover {
+    transform: translateY(-2px);
+    border-color: var(--primary);
+  }
+
+  .card:hover .arrow {
+    transform: translateX(4px);
+    color: var(--primary);
+  }
+}
+
+@media (max-width: 992px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .welcome-text {
+    font-size: 1.2rem;
+  }
+
+  .edit-text {
+    font-size: 0.9rem;
+  }
+}
