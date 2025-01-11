@@ -2,6 +2,13 @@
 
 - [Remix Docs](https://remix.run/docs)
 
+## Get Template
+To get this template, Type this in your terminal:
+
+```sh
+npx create-remix@latest --template DitzDev/remix-template
+```
+
 ## Development
 
 From your terminal:
